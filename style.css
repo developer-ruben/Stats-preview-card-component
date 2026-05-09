@@ -1,0 +1,226 @@
+/* VARIABLES */
+
+:root {
+  --clr-navy-950: 233, 47%, 7%;
+  --clr-blue-950: 244, 37%, 16%;
+  --clr-purple-500: 277, 64%, 61%;
+
+  --clr-white: 0, 0%, 100%;
+
+  --clr-white-100: hsla(0, 0%, 100%, 0.75);
+  --clr-white-200: hsla(0, 0%, 100%, 0.6);
+
+  --text-preset-1-size: 2.25rem;
+  --text-preset-1-height: 1.25;
+
+  --text-preset-2-size: 1.75rem;
+  --text-preset-2-height: 1.25;
+
+  --text-preset-3-size: 1.5rem;
+  --text-preset-3-height: 1.2;
+
+  --text-preset-4-size: 0.9375rem;
+  --text-preset-4-height: 1.65;
+
+  --text-preset-5-size: 0.75rem;
+  --text-preset-5-height: 2;
+  --text-preset-5-ls: 0.0625rem;
+
+  --spacing-0: 0;
+  --spacing-100: 0.5rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-800: 4rem;
+  --spacing-900: 4.5rem;
+  --spacing-1000: 5rem;
+}
+
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--clr-navy-950));
+  padding: var(--spacing-300) 1.5rem;
+  min-height: 100vh;
+  color: hsl(var(--clr-white));
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+p {
+  font-size: var(--text-preset-4-size);
+  line-height: var(--text-preset-4-height);
+}
+
+button {
+  font: inherit;
+}
+
+/* UTILITY */
+
+.sr-only {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap; /* prevents line breaks */
+}
+
+/* SUMMARY CARD */
+
+.preview-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: var(--spacing-100);
+  background-color: hsl(var(--clr-blue-950));
+  width: 100%;
+  max-width: 1128px;
+  overflow: hidden;
+}
+
+.preview-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+  padding: var(--spacing-900) var(--spacing-1000);
+}
+
+.preview-card__title {
+  font-size: var(--text-preset-1-size);
+  line-height: var(--text-preset-1-height);
+}
+
+.preview-card__highlight {
+  color: hsl(var(--clr-purple-500));
+}
+
+.preview-card__text {
+  opacity: 0.75;
+}
+
+.preview-card__list {
+  display: flex;
+  gap: var(--spacing-800);
+  margin-top: auto;
+}
+
+.preview-card__item {
+  font-weight: 700;
+  font-size: var(--text-preset-3-size);
+  line-height: var(--text-preset-3-height);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-card__item-title {
+  opacity: 0.6;
+  font-weight: 400;
+  font-size: var(--text-preset-5-size);
+  line-height: var(--text-preset-5-height);
+  font-family: "Lexend Deca", sans-serif;
+  letter-spacing: var(--text-preset-5-ls);
+}
+
+.preview-card__image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.preview-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--clr-purple-500)); /* purple */
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.preview-card__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ATTRIBUTION */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: var(--spacing-100);
+  background-color: hsl(var(--clr-blue-950));
+  padding: var(--spacing-100);
+}
+
+.attribution__link {
+  transition: color 0.3s ease-in-out;
+  color: hsl(var(--clr-purple-500));
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.attribution__link:hover {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  .preview-card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .preview-card__content {
+    text-align: center;
+    padding: var(--spacing-400);
+    gap: var(--spacing-100);
+  }
+  .preview-card__text {
+    margin-bottom: var(--spacing-500);
+  }
+  .preview-card__list {
+    flex-direction: column;
+    gap: var(--spacing-400);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* stop most animations/transitions for users who asked for reduced motion */
+  * {
+    animation: none !important; /* remove animations */
+    transition: none !important; /* remove transitions */
+  }
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <meta
+      name="description"
+      content="Get insights that help your business grow. Discover the benefits of data analytics to improve revenue, customer experience, and efficiency."
+    />
+    <meta
+      name="keywords"
+      content="data analytics, business insights, statistics, growth, decision making, revenue, customer experience, templates, queries"
+    />
+    <meta name="author" content="Ruben de Man" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <article class="preview-card">
+        <div class="preview-card__content">
+          <h1 class="preview-card__title">
+            Get <span class="preview-card__highlight">insights</span> that help
+            your business grow.
+          </h1>
+          <p class="preview-card__text">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+
+          <ul class="preview-card__list">
+            <li class="preview-card__item">
+              10k+
+              <span class="preview-card__item-title">companies</span>
+            </li>
+            <li class="preview-card__item">
+              314
+              <span class="preview-card__item-title">templates</span>
+            </li>
+            <li class="preview-card__item">
+              12m+
+              <span class="preview-card__item-title">queries</span>
+            </li>
+          </ul>
+        </div>
+        <div class="preview-card__image-wrapper">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="./images/image-header-mobile.jpg"
+            />
+            <img
+              class="preview-card__image"
+              src="./images/image-header-desktop.jpg"
+              alt="People working together analyzing data on screens"
+              loading="lazy"
+            />
+          </picture>
+          <div class="overlay"></div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      <p class="attribution__text">
+        Challenge by
+        <a
+          class="attribution__link"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          class="attribution__link"
+          href="https://rubendeman.nl"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ruben de Man</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
