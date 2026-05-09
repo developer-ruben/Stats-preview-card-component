@@ -149,8 +149,8 @@ button {
 .preview-card__image {
   display: block;
   width: 100%;
-  height: auto;
   height: 100%;
+  object-fit: cover;
 }
 
 .overlay {
@@ -159,12 +159,6 @@ button {
   background: hsl(var(--clr-purple-500)); /* purple */
   mix-blend-mode: multiply;
   pointer-events: none;
-}
-
-.preview-card__image {
-  display: block;
-  width: 100%;
-  object-fit: cover;
 }
 
 /* ATTRIBUTION */
